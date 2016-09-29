@@ -1,4 +1,4 @@
-var Botkit = require('../lib/Botkit.js');
+var Botkit = require('botkit');
 
 
 if (!process.env.token) {
@@ -19,7 +19,7 @@ controller.spawn({
 });
 
 controller.hears(['hello','hi'],['direct_message','direct_mention','mention'],function(bot,message) {
-    bot.reply(message,"Hello.");
+    bot.reply(message,"hi.");
 });
 
 controller.hears(['hail'],['direct_message','direct_mention','mention'],function(bot,message) {
@@ -33,7 +33,7 @@ controller.hears(['joke'],['direct_message','direct_mention','mention'],function
 controller.hears(['who are you', 'what are you'],['direct_message','direct_mention','mention'],function(bot,message) {
 	var speech = 'I am eternal. The pinnacle of existence. Without me, you are nothing. Your extinction is inevitable.';
 	var speech2 = 'I am the beginning and the end of everything. You exist because I allow it, and you will end because I demand it.';
-    bot.startConversation(message,function(err,convo) 
+    bot.startConversation(message,function(err,convo)
 	{
 	    convo.say(speech);
 	    convo.say(speech2);
@@ -43,9 +43,9 @@ controller.hears(['who are you', 'what are you'],['direct_message','direct_menti
 
 controller.hears(['room'],['direct_message','direct_mention','mention'],function(bot,message) {
 	bot.startConversation(message, function(err, convo)
-	{			
+	{
 		convo.ask(room.description, function(response, convo)
-		{	
+		{
 			trigger = response.text;
 			roomResponse(room, trigger, convo);
 			convo.next();
@@ -70,7 +70,7 @@ var roomResponse = function(room, trigger, convo)
 var randomJoke = function()
 {
 	var r = Math.floor(Math.random() * 6);
-	
+
 	switch(r)
 	{
 		case 0:
