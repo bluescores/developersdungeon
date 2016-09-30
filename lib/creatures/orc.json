@@ -1,0 +1,21 @@
+{
+  "type": "orc",
+  "description": "A large, spiteful greenskin.",
+  "attributes": {
+    "str": 5,
+    "mag": 0,
+    "dex": 2,
+    "max_hp": 7
+  },
+  "abilities": [
+    "smash",
+    "roar"
+  ],
+  "statusEffects": [
+    "poison"
+  ],
+  "resistances": [{
+    "fire": -0.5,
+    "cold": 0.25
+    }]
+}

@@ -1,4 +1,5 @@
 var Botkit = require('botkit');
+var Encounter = require('./lib/encounter.js')
 
 
 if (!process.env.token) {
@@ -15,6 +16,8 @@ controller.spawn({
 }).startRTM(function(err) {
   if (err) {
     throw new Error(err);
+  } else {
+
   }
 });
 
@@ -22,8 +25,19 @@ controller.hears(['hello','hi'],['direct_message','direct_mention','mention'],fu
     bot.reply(message,"hi.");
 });
 
+controller.hears(['encounter'],['direct_message','direct_mention','mention'],function(bot,message) {
+    bot.reply(message,"An encounter!");
+    var enc = new Encounter("./lib/encounter.json");
+    bot.reply(message,enc.describe());
+    bot.reply(message,"The monsters approach: " + enc.getNPCList())
+});
+
 controller.hears(['hail'],['direct_message','direct_mention','mention'],function(bot,message) {
     bot.reply(message,"Hail, fellow traveler.");
+});
+
+controller.hears(['build','automation','teamcity'],['direct_message','direct_mention','mention'],function(bot,message) {
+    bot.reply(message,"Erm, you've got the wrong guy...");
 });
 
 controller.hears(['joke'],['direct_message','direct_mention','mention'],function(bot,message) {

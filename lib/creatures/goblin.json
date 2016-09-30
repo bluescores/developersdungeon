@@ -1,0 +1,10 @@
+{
+  "type": "goblin",
+  "description": "A small, spiteful greenskin.",
+  "attributes": {
+    "str": 2,
+    "mag": 0,
+    "dex": 2,
+    "max_hp": 5
+  }
+}

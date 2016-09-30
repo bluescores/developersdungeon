@@ -1,0 +1,20 @@
+{
+  "id": 1,
+  "type": "battle",
+  "difficulty_lvl": 4,
+  "description": "You spy a band of merry greenskins. The greenskins spy you back. Prepare to battle!",
+  "creatures": [{
+      "type": "goblin",
+      "name": "goblin",
+      "loot_rank": 0.1
+    },{
+      "type": "goblin",
+      "name": "goblin",
+      "loot_rank": 0.1
+    },{
+      "type": "orc",
+      "name": "orc",
+      "loot_rank": 0.3
+    }
+    ]
+}
