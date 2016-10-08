@@ -27,9 +27,11 @@ controller.hears(['hello','hi'],['direct_message','direct_mention','mention'],fu
 
 controller.hears(['encounter'],['direct_message','direct_mention','mention'],function(bot,message) {
     bot.reply(message,"An encounter!");
-    var enc = new Encounter("./lib/encounter.json");
+
+    var enc = new Encounter("lib/encounter0.json");
+    console.log(enc);
     bot.reply(message,enc.describe());
-    bot.reply(message,"The monsters approach: " + enc.getNPCList())
+    bot.reply(message,"The monsters approach: " + enc.getMonsterList())
 });
 
 controller.hears(['hail'],['direct_message','direct_mention','mention'],function(bot,message) {

@@ -1,0 +1,11 @@
+{
+  "id": 2,
+  "type": "battle",
+  "difficulty_lvl": 1,
+  "description": "A slime draws near!",
+  "npcs": [{
+      "type": "blue_slime",
+      "name": "slime",
+      "loot_rank": 0.1
+    }]
+}
